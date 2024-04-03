@@ -8,21 +8,28 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     border: 0 none;
     background-color: #343434;
-    
-  vertical-align: baseline;
+} 
 
-    
-}
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+
+
 html, body, #root {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  font-family: "Ubuntu", sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Ubuntu", sans-serif;
+
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
+
 `;
 
 export default GlobalStyle;

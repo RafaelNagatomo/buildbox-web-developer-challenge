@@ -7,10 +7,10 @@ const LogoStyle = styled.img`
 `;
 
 const HeaderStyle = styled.header`
+  width: 100vw;
   background-color: #2b2b2b;
   padding: 24px;
   display: flex;
-  align-items: center;
   justify-content: center;
 `;
 

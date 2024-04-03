@@ -5,7 +5,7 @@ import { LogoStyle, HeaderStyle } from "./style";
 const Header = () => {
   return (
     <HeaderStyle>
-      <LogoStyle src={logo} alt="BUILDBOX LOGO" />;
+      <LogoStyle src={logo} alt="BUILDBOX LOGO" />
     </HeaderStyle>
   );
 };
