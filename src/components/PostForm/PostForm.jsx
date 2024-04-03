@@ -1,23 +1,32 @@
 import Button from "../Button/Button";
 
-import { PostFormContainer } from "./style";
+import {
+  PostFormContainer,
+  InputName,
+  InputText,
+  ButtonContainer,
+  H3,
+} from "./style";
 
 const PostForm = ({ nameValue, textValue }) => {
   return (
     <PostFormContainer>
-      <input
+      <InputName
         type="text"
         className="post-name"
         value={nameValue}
         placeholder="Digite seu nome"
       />
-      <input
+      <InputText
         type="text"
         className="post-text"
         value={textValue}
-        placeholder="Digite seu nome"
+        placeholder="Mensagem"
       />
-      <Button />
+      <ButtonContainer>
+        <H3>Descartar</H3>
+        <Button />
+      </ButtonContainer>
     </PostFormContainer>
   );
 };
