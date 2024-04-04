@@ -1,20 +1,25 @@
 import Button from "../Button/Button";
 
 import imgPlaceholder from "../../assets/images/img-placeholder.png";
+import trashIcon from "../../assets/images/trash.png";
 
 import {
   PostFormContainer,
   InputName,
   InputText,
   ButtonContainer,
-  H3,
   ImgPlaceholder,
+  TrashIcon,
+  ImgContainer,
 } from "./style";
 
 const PostForm = ({ nameValue, textValue }) => {
   return (
     <PostFormContainer>
-      <ImgPlaceholder src={imgPlaceholder} alt="IMG-PLACEHOLDER" />
+      <TrashIcon src={trashIcon} alt="trash-icon" />
+      <ImgContainer>
+        <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
+      </ImgContainer>
       <InputName
         type="text"
         className="post-name"
@@ -28,8 +33,8 @@ const PostForm = ({ nameValue, textValue }) => {
         placeholder="Mensagem"
       />
       <ButtonContainer>
-        <H3>Descartar</H3>
-        <Button />
+        <h3>Descartar</h3>
+        <Button>Publicar</Button>
       </ButtonContainer>
     </PostFormContainer>
   );
