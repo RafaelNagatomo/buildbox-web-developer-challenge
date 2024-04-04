@@ -4,15 +4,13 @@ const PostFormContainer = styled.div`
   width: 516px;
   height: 354px;
   background-color: #313131;
-  padding: 0 23px 23px 23px;
-  margin: 41px 0 56px 0;
+  padding: 23px 23px 23px 23px;
+  margin: 134px 0 56px 0;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
 
-  h3 {
-    color: #5f5f5f;
-    font-size: 12px;
-    text-decoration: underline;
+  .none {
+    display: none;
   }
 `;
 
@@ -20,6 +18,14 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+`;
+
+const TrashIcon = styled.img`
+  position: absolute;
+  left: 294px;
+  top: 32px;
+  cursor: pointer;
 `;
 
 const InputName = styled.input`
@@ -52,17 +58,18 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
+
+  h3 {
+    color: #5f5f5f;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 const ImgPlaceholder = styled.img`
   width: 88px;
   height: 88px;
-`;
-
-const TrashIcon = styled.img`
-  position: relative;
-  left: 294px;
-  top: 62px;
 `;
 
 export {

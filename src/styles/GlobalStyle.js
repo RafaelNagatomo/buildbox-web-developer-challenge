@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     box-sizing: border-box;
     border: 0 none;
-    /* background-color: #343434; */
+    
 } 
 
 .App {
@@ -16,19 +16,10 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
 } 
 
-
-
-html, body, #root {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    font-family: "Ubuntu", sans-serif;
-
-}
-
 html {
     font-size: 62.5%;
     background-color: #343434;
+    font-family: "Ubuntu", sans-serif;
 }
 
 `;

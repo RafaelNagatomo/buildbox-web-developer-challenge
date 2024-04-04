@@ -26,6 +26,7 @@ const FeedCardInfo = styled.div`
   .iconeClose {
     position: absolute;
     right: -1px;
+    cursor: pointer;
   }
 
   p {

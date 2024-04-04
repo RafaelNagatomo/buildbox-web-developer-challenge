@@ -16,8 +16,8 @@ import {
 const PostForm = ({ nameValue, textValue }) => {
   return (
     <PostFormContainer>
-      <TrashIcon src={trashIcon} alt="trash-icon" />
       <ImgContainer>
+        <TrashIcon src={trashIcon} alt="trash-icon" className="none" />
         <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
       </ImgContainer>
       <InputName

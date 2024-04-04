@@ -7,6 +7,8 @@ const Feed = () => {
     <FeedContainer>
       <h2>Feed</h2>
       <FeedItem />
+      <FeedItem />
+      <FeedItem />
     </FeedContainer>
   );
 };
