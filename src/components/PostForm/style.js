@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const PostFormContainer = styled.div`
   width: 516px;
-  height: 353px;
+  height: 354px;
   background-color: #313131;
-  padding: 24px;
+  padding: 23px;
   margin-top: 41px;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
@@ -18,7 +18,7 @@ const InputName = styled.input`
   height: 40px;
   outline: none;
   font-size: 14px;
-  margin: 16px 0 8px;
+  margin: 16px 0 0px;
   padding: 12px 16px;
   border-radius: 8px;
   background-color: #494949;
@@ -48,9 +48,23 @@ const H3 = styled.h3`
 
 const ButtonContainer = styled.div`
   width: 100%;
-  /* height: 30%; */
   display: flex;
   align-items: center;
   justify-content: end;
+  background-color: #313131;
 `;
-export { PostFormContainer, InputName, InputText, ButtonContainer, H3 };
+
+const ImgPlaceholder = styled.img`
+  width: 88px;
+  height: 90px;
+  background-color: #313131;
+`;
+
+export {
+  PostFormContainer,
+  InputName,
+  InputText,
+  ButtonContainer,
+  H3,
+  ImgPlaceholder,
+};
