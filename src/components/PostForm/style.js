@@ -5,7 +5,7 @@ const PostFormContainer = styled.div`
   height: 354px;
   background-color: #313131;
   padding: 23px;
-  margin-top: 41px;
+  margin: 41px 0 56px 0;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
   display: flex;
