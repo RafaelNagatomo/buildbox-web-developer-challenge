@@ -6,8 +6,8 @@ const ButtonStyle = styled.button`
   margin: 0 0 0 24px;
   padding: 12px 24px;
   border-radius: 8px;
-  background-color: #71bb00;
-  color: #fff;
+  background-color: #5f5f5f;
+  color: #313131;
   font-size: 14px;
 `;
 

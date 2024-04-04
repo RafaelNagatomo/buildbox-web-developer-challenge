@@ -1,9 +1,12 @@
-import { FeedContainer, H3 } from "./style";
+import FeedItem from "../FeedItem/FeedItem";
+
+import { FeedContainer } from "./style";
 
 const Feed = () => {
   return (
     <FeedContainer>
-      <H3>Feed</H3>
+      <h2>Feed</h2>
+      <FeedItem />
     </FeedContainer>
   );
 };

@@ -1,7 +1,7 @@
 import { ButtonStyle } from "./style";
 
-const Button = () => {
-  return <ButtonStyle className="publish-button">Publicar</ButtonStyle>;
+const Button = ({ children }) => {
+  return <ButtonStyle className="publish-button">{children}</ButtonStyle>;
 };
 
 export default Button;

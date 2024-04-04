@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     box-sizing: border-box;
     border: 0 none;
-    background-color: #343434;
+    /* background-color: #343434; */
 } 
 
 .App {
@@ -28,6 +28,7 @@ html, body, #root {
 
 html {
     font-size: 62.5%;
+    background-color: #343434;
 }
 
 `;
