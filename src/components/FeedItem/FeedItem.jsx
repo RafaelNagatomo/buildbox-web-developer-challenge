@@ -11,7 +11,6 @@ const FeedItem = () => {
         <IoIosCloseCircleOutline
           className="iconeClose"
           size={20}
-          stroke-width="0.1"
           color="#D65923"
         />
         <p>
