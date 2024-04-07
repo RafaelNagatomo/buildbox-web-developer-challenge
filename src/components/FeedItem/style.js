@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
+const FeedItemContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
+
 const FeedItemCard = styled.div`
-  width: 100%;
+  width: 516px;
   padding: 12px 24px 32px 24px;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
@@ -9,6 +14,7 @@ const FeedItemCard = styled.div`
   display: flex;
   flex-direction: wrap;
   margin-bottom: 16px;
+  /* transition: all 1s ease-out; */
 `;
 
 const UserImg = styled.img`
@@ -18,18 +24,22 @@ const UserImg = styled.img`
 `;
 
 const FeedCardInfo = styled.div`
+  width: 76.5%;
   display: flex;
   flex-direction: column;
   margin-left: 32px;
-  position: relative;
+  /* position: relative; */
 
   .iconeClose {
-    position: absolute;
-    right: -1px;
+    position: relative;
+    /* top: 340px; */
+    left: 337px;
     cursor: pointer;
   }
 
   p {
+    word-wrap: break-word;
+    width: 100%;
     font-size: 16px;
     color: #9f9f9f;
     margin: 43px 0 24px 0;
@@ -44,9 +54,10 @@ const FeedCardInfo = styled.div`
   }
 
   h3 {
+    word-wrap: break-word;
     font-size: 14px;
     color: #7a7a7a;
   }
 `;
 
-export { FeedItemCard, UserImg, FeedCardInfo };
+export { FeedItemContainer, FeedItemCard, UserImg, FeedCardInfo };

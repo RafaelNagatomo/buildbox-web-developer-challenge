@@ -14,7 +14,7 @@ import {
   ImgContainer,
 } from "./style";
 
-const PostForm = () => {
+const PostForm = ({ addPost }) => {
   const [nameValue, setNameValue] = useState("");
   const [textValue, setTextValue] = useState("");
   const [visibleInvisible, setVisibleInvisible] = useState(false);
@@ -35,16 +35,10 @@ const PostForm = () => {
     setVisibleInvisible("");
   };
 
-  const handleDiscartValues = () => {
+  const handleAddPost = () => {
+    addPost(nameValue, textValue);
     emptyValues();
   };
-
-  const handlePostAdd = () => {
-    console.log(nameValue, textValue);
-    emptyValues();
-  };
-
-  const handlePostDelete = () => {};
 
   return (
     <PostFormContainer>
@@ -53,7 +47,7 @@ const PostForm = () => {
           src={trashIcon}
           alt="trash-icon"
           className={visibleInvisible ? "block" : "none"}
-          onClick={handlePostDelete}
+          onClick={emptyValues}
         />
         <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
       </ImgContainer>
@@ -72,8 +66,8 @@ const PostForm = () => {
         onChange={onChangeText}
       />
       <ButtonContainer>
-        <h3 onClick={handleDiscartValues}>Descartar</h3>
-        <Button onClick={handlePostAdd}>Publicar</Button>
+        <h3 onClick={emptyValues}>Descartar</h3>
+        <Button onClick={handleAddPost}>Publicar</Button>
       </ButtonContainer>
     </PostFormContainer>
   );
