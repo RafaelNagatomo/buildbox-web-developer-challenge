@@ -6,6 +6,7 @@ import trashIcon from "../../assets/images/trash.png";
 
 import {
   PostFormContainer,
+  ImgUpload,
   InputName,
   InputText,
   ButtonContainer,
@@ -18,38 +19,57 @@ const PostForm = ({ addPost }) => {
   const [nameValue, setNameValue] = useState("");
   const [textValue, setTextValue] = useState("");
   const [visibleInvisible, setVisibleInvisible] = useState(false);
+  const [buttonGreen, setButtonGreen] = useState(false);
+  const [image, setImage] = useState("");
 
   const onChangeName = (e) => {
-    setVisibleInvisible(e !== "");
+    setButtonGreen(e !== "");
     setNameValue(e.target.value);
   };
 
   const onChangeText = (e) => {
-    setVisibleInvisible(e !== "");
+    setButtonGreen(e !== "");
     setTextValue(e.target.value);
   };
 
   const emptyValues = () => {
     setNameValue("");
     setTextValue("");
+    setButtonGreen("");
+  };
+
+  const emptyImg = () => {
+    setImage("");
     setVisibleInvisible("");
   };
 
   const handleAddPost = () => {
     addPost(nameValue, textValue);
     emptyValues();
+    emptyImg();
+    setButtonGreen("");
+  };
+
+  const handleImageChange = (e) => {
+    setVisibleInvisible(e !== "");
+    setImage(e.target.files[0]);
   };
 
   return (
     <PostFormContainer>
       <ImgContainer>
+        <ImgUpload type="file" onChange={handleImageChange} />
         <TrashIcon
           src={trashIcon}
           alt="trash-icon"
           className={visibleInvisible ? "block" : "none"}
-          onClick={emptyValues}
+          onClick={emptyImg}
         />
-        <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
+        {image ? (
+          <ImgPlaceholder src={URL.createObjectURL(image)} alt="user-img" />
+        ) : (
+          <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
+        )}
       </ImgContainer>
       <InputName
         type="text"
@@ -60,14 +80,15 @@ const PostForm = ({ addPost }) => {
       />
       <InputText
         type="text"
-        className="post-text"
         value={textValue}
         placeholder="Mensagem"
         onChange={onChangeText}
       />
       <ButtonContainer>
         <h3 onClick={emptyValues}>Descartar</h3>
-        <Button onClick={handleAddPost}>Publicar</Button>
+        <Button onClick={handleAddPost} buttonGreen={buttonGreen}>
+          Publicar
+        </Button>
       </ButtonContainer>
     </PostFormContainer>
   );

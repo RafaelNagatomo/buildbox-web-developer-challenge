@@ -10,6 +10,7 @@ const ButtonStyle = styled.button`
   color: #313131;
   font-size: 14px;
   cursor: pointer;
+  transition-duration: 1s;
 `;
 
 export { ButtonStyle };

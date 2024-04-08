@@ -1,8 +1,8 @@
 import { ButtonStyle } from "./style";
 
-const Button = ({ onClick, children }) => {
+const Button = ({ onClick, children, buttonGreen }) => {
   return (
-    <ButtonStyle className="publish-button" onClick={onClick}>
+    <ButtonStyle className={buttonGreen ? "bg-green" : ""} onClick={onClick}>
       {children}
     </ButtonStyle>
   );

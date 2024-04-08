@@ -1,6 +1,6 @@
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-import userImg from "../../assets/images/photo-base1.png";
+import imgPlaceholder from "../../assets/images/img-placeholder.png";
 import {
   FeedItemContainer,
   FeedItemCard,
@@ -13,10 +13,13 @@ const FeedItem = ({ posts, removePost }) => {
     <FeedItemContainer>
       {posts.map((post) => (
         <FeedItemCard key={post.id}>
-          <UserImg src={userImg} alt="user-img" />
+          <UserImg
+            src={post.image ? post.image : imgPlaceholder}
+            alt="user-img"
+          />
           <FeedCardInfo>
             <IoIosCloseCircleOutline
-              onClick={() => removePost(posts.id)}
+              onClick={() => removePost(post.id)}
               className="iconeClose"
               size={20}
               color="#D65923"

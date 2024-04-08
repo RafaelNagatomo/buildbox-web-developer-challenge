@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     border: 0 none;
     
+    
 } 
 
 .App {
@@ -20,6 +21,7 @@ html {
     font-size: 62.5%;
     background-color: #343434;
     font-family: "Ubuntu", sans-serif;
+    
 }
 
 `;

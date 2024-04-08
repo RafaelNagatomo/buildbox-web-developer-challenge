@@ -3,6 +3,7 @@ import styled from "styled-components";
 const FeedItemContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  transition: transform 2s;
 `;
 
 const FeedItemCard = styled.div`
@@ -14,7 +15,6 @@ const FeedItemCard = styled.div`
   display: flex;
   flex-direction: wrap;
   margin-bottom: 16px;
-  /* transition: all 1s ease-out; */
 `;
 
 const UserImg = styled.img`
@@ -28,11 +28,9 @@ const FeedCardInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 32px;
-  /* position: relative; */
 
   .iconeClose {
     position: relative;
-    /* top: 340px; */
     left: 337px;
     cursor: pointer;
   }

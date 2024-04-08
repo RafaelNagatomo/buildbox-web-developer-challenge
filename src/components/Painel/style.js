@@ -13,8 +13,4 @@ const PainelContainer = styled.div`
   }
 `;
 
-const FeedContainer = styled.div`
-  display: flex;
-`;
-
-export { FeedContainer, PainelContainer };
+export { PainelContainer };

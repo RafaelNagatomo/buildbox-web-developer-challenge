@@ -8,9 +8,16 @@ const PostFormContainer = styled.div`
   margin: 134px 0 56px 0;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
+  position: relative;
 
   .none {
     display: none;
+  }
+
+  .bg-green {
+    color: #f6f6f6;
+    background-color: green;
+    transition-duration: 1s;
   }
 `;
 
@@ -67,6 +74,17 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const ImgUpload = styled.input`
+  opacity: 0;
+  width: 85px;
+  height: 100px;
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 35px;
+  cursor: pointer;
+`;
+
 const ImgPlaceholder = styled.img`
   width: 88px;
   height: 88px;
@@ -74,6 +92,7 @@ const ImgPlaceholder = styled.img`
 
 export {
   PostFormContainer,
+  ImgUpload,
   InputName,
   InputText,
   ButtonContainer,
