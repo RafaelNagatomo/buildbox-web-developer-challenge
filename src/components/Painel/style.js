@@ -6,6 +6,11 @@ const PainelContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 520px) {
+    width: 100%;
+    justify-content: center;
+  }
+
   h2 {
     font-size: 14px;
     color: #7a7a7a;

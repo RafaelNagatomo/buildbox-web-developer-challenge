@@ -86,18 +86,23 @@ const PostForm = ({ addPost }) => {
   return (
     <PostFormContainer>
       <ImgContainer>
-        <ImgUpload type="file" onChange={handleImageChange} />
-        <TrashIcon
-          src={trashIcon}
-          alt="trash-icon"
-          className={visibleInvisible ? "block" : "none"}
-          onClick={emptyImg}
-        />
-        {imageId ? (
-          <ImgPlaceholder src={localStorage.getItem(imageId)} alt="user-img" />
-        ) : (
-          <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
-        )}
+        <div>
+          <ImgUpload type="file" onChange={handleImageChange} />
+          <TrashIcon
+            src={trashIcon}
+            alt="trash-icon"
+            className={visibleInvisible ? "block" : "none"}
+            onClick={emptyImg}
+          />
+          {imageId ? (
+            <ImgPlaceholder
+              src={localStorage.getItem(imageId)}
+              alt="user-img"
+            />
+          ) : (
+            <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
+          )}
+        </div>
       </ImgContainer>
       <InputName
         type="text"

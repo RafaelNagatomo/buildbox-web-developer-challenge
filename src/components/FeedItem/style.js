@@ -4,6 +4,11 @@ const FeedItemContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   transition: transform 2s;
+  position: relative;
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 `;
 
 const FeedItemCard = styled.div`
@@ -15,6 +20,10 @@ const FeedItemCard = styled.div`
   display: flex;
   flex-direction: wrap;
   margin-bottom: 16px;
+
+  @media (max-width: 520px) {
+    width: 95%;
+  }
 `;
 
 const UserImg = styled.img`
@@ -30,9 +39,13 @@ const FeedCardInfo = styled.div`
   margin-left: 32px;
 
   .iconeClose {
-    position: relative;
-    left: 337px;
+    position: absolute;
+    right: 12px;
     cursor: pointer;
+
+    @media (max-width: 520px) {
+      width: 15%;
+    }
   }
 
   p {

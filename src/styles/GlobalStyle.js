@@ -7,8 +7,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     box-sizing: border-box;
     border: 0 none;
-    
-    
+    font-family: 'Roboto', sans-serif;
 } 
 
 .App {
@@ -20,8 +19,6 @@ const GlobalStyle = createGlobalStyle`
 html {
     font-size: 62.5%;
     background-color: #343434;
-    font-family: "Ubuntu", sans-serif;
-    
 }
 
 `;

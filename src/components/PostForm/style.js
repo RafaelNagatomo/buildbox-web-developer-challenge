@@ -8,7 +8,10 @@ const PostFormContainer = styled.div`
   margin: 134px 0 56px 0;
   border-radius: 3px;
   border: solid 1px #3b3b3b;
-  position: relative;
+
+  @media (max-width: 520px) {
+    width: 95%;
+  }
 
   .none {
     display: none;
@@ -25,13 +28,19 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+
+  div {
+    width: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const TrashIcon = styled.img`
   position: absolute;
-  left: 294px;
-  top: 32px;
+  right: -5px;
   cursor: pointer;
 `;
 
