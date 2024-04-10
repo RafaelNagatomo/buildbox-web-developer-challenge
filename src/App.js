@@ -4,6 +4,8 @@ import Painel from "./components/Painel/Painel";
 import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
+  localStorage.clear();
+
   return (
     <div className="App">
       <GlobalStyle />

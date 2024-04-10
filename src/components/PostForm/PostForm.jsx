@@ -20,7 +20,7 @@ const PostForm = ({ addPost }) => {
   const [textValue, setTextValue] = useState("");
   const [visibleInvisible, setVisibleInvisible] = useState(false);
   const [buttonGreen, setButtonGreen] = useState(false);
-  const [image, setImage] = useState("");
+  const [imageId, setImageId] = useState("");
 
   const onChangeName = (e) => {
     setButtonGreen(e !== "");
@@ -39,20 +39,48 @@ const PostForm = ({ addPost }) => {
   };
 
   const emptyImg = () => {
-    setImage("");
+    setImageId("");
     setVisibleInvisible("");
   };
 
   const handleAddPost = () => {
-    addPost(nameValue, textValue);
+    if (nameValue === "" || textValue === "") return;
+    addPost(nameValue, textValue, imageId);
     emptyValues();
     emptyImg();
     setButtonGreen("");
   };
 
+  function uuidv4() {
+    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) =>
+      (
+        +c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (+c / 4)))
+      ).toString(16)
+    );
+  }
+
+  function getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      if (reader === "") return;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        let encoded = reader.result.toString();
+
+        resolve(encoded);
+      };
+      reader.onerror = (error) => reject(error);
+    });
+  }
+
   const handleImageChange = (e) => {
-    setVisibleInvisible(e !== "");
-    setImage(e.target.files[0]);
+    getBase64(e.target.files[0]).then((imageBase64) => {
+      const uuid = uuidv4();
+      localStorage.setItem(uuid, imageBase64);
+      setImageId(uuid);
+      setVisibleInvisible(e !== "");
+    });
   };
 
   return (
@@ -65,15 +93,14 @@ const PostForm = ({ addPost }) => {
           className={visibleInvisible ? "block" : "none"}
           onClick={emptyImg}
         />
-        {image ? (
-          <ImgPlaceholder src={URL.createObjectURL(image)} alt="user-img" />
+        {imageId ? (
+          <ImgPlaceholder src={localStorage.getItem(imageId)} alt="user-img" />
         ) : (
           <ImgPlaceholder src={imgPlaceholder} alt="img-placeholder" />
         )}
       </ImgContainer>
       <InputName
         type="text"
-        className="post-name"
         value={nameValue}
         placeholder="Digite seu nome"
         onChange={onChangeName}

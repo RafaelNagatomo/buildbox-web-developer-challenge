@@ -14,7 +14,11 @@ const FeedItem = ({ posts, removePost }) => {
       {posts.map((post) => (
         <FeedItemCard key={post.id}>
           <UserImg
-            src={post.image ? post.image : imgPlaceholder}
+            src={
+              localStorage.getItem(post.image)
+                ? localStorage.getItem(post.image)
+                : imgPlaceholder
+            }
             alt="user-img"
           />
           <FeedCardInfo>
